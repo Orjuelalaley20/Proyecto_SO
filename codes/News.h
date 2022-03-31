@@ -1,0 +1,4 @@
+typedef struct News
+{
+    
+}news;
