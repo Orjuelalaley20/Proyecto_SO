@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include "News.h"
 
-
 news nuevaNoticia;
 
 int main(int argc, char const *argv[])
@@ -28,10 +27,33 @@ int main(int argc, char const *argv[])
         exit(1);
     }
     fd = open(argv[1], O_WRONLY);
-    bytes = read (fd, &nuevaNoticia, sizeof(nuevaNoticia));
+    bytes = read(fd, &nuevaNoticia, sizeof(nuevaNoticia));
 
-
-
+    /*token = strtok(buffer, delimitador);
+    if (token == NULL)
+    {
+        perror("No hay noticias seleccionadas\n");
+        exit(0);
+    }
+    else
+    {
+        while (token != NULL)
+        {
+            if (*token == 'P')
+            {
+                token = strtok(NULL, delimitador);
+                mensaje = token;
+                printf("%s\n", mensaje);
+            }
+            else if (*token == 'C')
+            {
+                token = strtok(NULL, delimitador);
+                mensaje = token;
+                printf("%s\n", mensaje);
+            }
+            token = strtok(NULL, delimitador);
+        }
+    }*/
 
     return 0;
 }
