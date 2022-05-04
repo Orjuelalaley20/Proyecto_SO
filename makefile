@@ -1,13 +1,19 @@
-all: client server
+all: publicador suscriptor central
 
-server: server.o nom.h
-	gcc -o server server.o
+central: central.o nom.h
+	gcc -o central central.o -pthread
 
-server.o: server.c nom.h
-	gcc -c server.c
+central.o: central.c nom.h
+	gcc -c central.c -pthread
 
-client: client.o nom.h
-	gcc -o client client.o
+publicador: publicador.o nom.h
+	gcc -o publicador publicador.o
 
-client.o: client.c nom.h
-	gcc -c client.c
+publicador.o: publicador.c nom.h
+	gcc -c publicador.c
+
+suscriptor: suscriptor.o nom.h
+	gcc -o suscriptor suscriptor.o
+
+suscriptor.o: suscriptor.c nom.h
+	gcc -c suscriptor.c
